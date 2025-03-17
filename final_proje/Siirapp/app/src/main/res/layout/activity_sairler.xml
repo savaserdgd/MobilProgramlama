@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backg"
+    android:padding="20dp">
+
+    <!-- Logo Üst Kısımda Küçük -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/siirapp_logo"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:contentDescription="Uygulama Logosu" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="10dp"
+        android:gravity="start">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mehmet Akif Ersoy"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İstiklal Marşı\nÇanakkale Şehitlerine\nBülbül"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nazım Hikmet"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kuvâyi Milliye Destanı\nMemleketimden İnsan Manzaraları\nCeviz Ağacı"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Necip Fazıl Kısakürek"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sakarya Türküsü\nZindandan Mehmed'e Mektup\nKaldırımlar"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cahit Sıtkı Tarancı"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Otuz Beş Yaş\nMemleket İsterim\nGün Eksilmesin Penceremden"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orhan Veli Kanık"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anlatamıyorum\nİstanbul'u Dinliyorum\nGelmiş Bulundum"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ahmet Haşim"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Merdiven\nO Belde\nParıltı"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:layout_marginBottom="15dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
