@@ -1,49 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backg"
-    tools:context=".DashboardAdminActivity">
-    <RelativeLayout
-        android:id="@+id/toolbarRL"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DashboardUserActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/siirapp_logo"/>
+
+    <!-- Başlık -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Kullanıcı Paneli"
+        android:textColor="#5D4037"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
+
+    <!-- Email Bilgisi -->
+    <TextView
+        android:id="@+id/userEmailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="user@example.com"
+        android:textColor="#5D4037"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/addPoemBtn"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@drawable/shape_toolbar02">
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_button01"
+        app:backgroundTint="@null"
+        android:text="Şiirlerim"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:text="Kontrol Paneli Kullanıcısı"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+    <!-- Ana Buton -->
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_button01"
+        app:backgroundTint="@null"
+        android:text="Anasayfaya Geç"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/subTitleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titleTv"
-            android:layout_centerHorizontal="true"
-            android:text="abc@example.com"
-            android:textColor="@color/white"/>
 
-        <ImageButton
-            android:id="@+id/logoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_logout_white"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
-            >
 
-        </ImageButton>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+    <!-- Çıkış Butonu -->
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_button01"
+        app:backgroundTint="@null"
+        android:text="Çıkış Yap"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>

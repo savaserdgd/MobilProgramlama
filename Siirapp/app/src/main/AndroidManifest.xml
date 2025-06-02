@@ -16,6 +16,21 @@
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:targetApi="31">
 
+
+        <activity
+            android:name=".PoemDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".addPoemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserPoemsListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PoemListActivity"
+            android:exported="false" />
         <activity
             android:name=".DashboardAdminActivity"
             android:exported="false" />
@@ -36,8 +51,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

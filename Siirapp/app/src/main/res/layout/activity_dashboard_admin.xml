@@ -9,6 +9,7 @@
     tools:context=".DashboardAdminActivity">
     <RelativeLayout
         android:id="@+id/toolbarRL"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@drawable/shape_toolbar02">
@@ -31,18 +32,46 @@
             android:layout_centerHorizontal="true"
             android:text="abc@example.com"
             android:textColor="@color/white"/>
-        
+
         <ImageButton
             android:id="@+id/logoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="12dp"
             android:src="@drawable/ic_logout_white"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            >
+            android:contentDescription="Çıkış" />
 
-        </ImageButton>
+        <LinearLayout
+            android:id="@+id/bottomLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addCategoryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="108dp"
+                android:layout_marginTop="134dp"
+                android:layout_marginEnd="80dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_button01"
+                android:minHeight="70dp"
+                android:text="+ Kategori Ekle"
+                android:textAllCaps="false"
+                android:textColor="@color/white">
+
+            </Button>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

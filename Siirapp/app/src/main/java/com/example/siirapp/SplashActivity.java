@@ -3,14 +3,7 @@ package com.example.siirapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,48 +21,61 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        firebaseAuth= FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                 checkUser();
-
-                }
-            },2000 );
-        }
+        new Handler().postDelayed(this::checkUser, 2000);
+    }
 
     private void checkUser() {
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if (firebaseUser==null){
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser == null) {
+            // Kullanıcı giriş yapmamışsa
+            startActivity(new Intent(this, MainActivity.class));
             finish();
+        } else {
+            // Kullanıcı giriş yapmışsa, tipini kontrol et
+            checkUserType(currentUser.getUid());
+        }
+    }
+
+    private void checkUserType(String uid) {
+        DatabaseReference userRef = FirebaseDatabase.getInstance()
+                .getReference("Users")
+                .child(uid);
+
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String userType = snapshot.child("userType").getValue(String.class);
+                    redirectToProperDashboard(userType);
+                } else {
+                    // Kullanıcı verisi yoksa
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Hata durumunda
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+    }
+
+    private void redirectToProperDashboard(String userType) {
+        Class<?> destinationActivity;
+
+        if ("admin".equals(userType)) {
+            destinationActivity = DashboardAdminActivity.class;
+        } else {
+            // Varsayılan olarak user kabul et
+            destinationActivity = DashboardUserActivity.class;
         }
 
-        else {
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-            ref.child(firebaseUser.getUid())
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot snapshot) {
-                            String userType =""+snapshot.child("userType").getValue();
-                            if (userType.equals("user")){
-                                startActivity(new Intent(SplashActivity.this, DashboardUserActivity.class));
-
-                            }
-                            else if(userType.equals("admin")){
-                                startActivity(new Intent(SplashActivity.this, DashboardAdminActivity.class));
-                                finish();
-
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError error) {
-
-                        }
-                    });
-        }
-
+        startActivity(new Intent(this, destinationActivity));
+        finish();
     }
 }

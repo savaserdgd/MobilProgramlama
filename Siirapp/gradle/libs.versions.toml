@@ -1,32 +1,37 @@
 [versions]
-agp = "8.9.0"
-junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.10.0"
-activity = "1.8.0"
-constraintlayout = "2.1.4"
-googleGmsGoogleServices = "4.4.1"
-firebaseAnalytics = "22.1.2"
-firebaseAuth = "23.1.0"
-firebaseDatabase = "21.0.0"
-firebaseStorage = "21.0.1"
+agp = "8.1.0" # Android Gradle Plugin
+junit = "4.13.2" # JUnit versiyonu
+junitVersion = "1.1.5" # Android JUnit
+espressoCore = "3.5.1" # Espresso test
+appcompat = "1.6.1" # AppCompat
+material = "1.10.0" # Material Design
+activity = "1.8.0" # Activity
+constraintlayout = "2.1.4" # ConstraintLayout
+googleGmsGoogleServices = "4.3.15" # Firebase servisleri
+firebaseBom = "32.3.1" # Firebase BOM
+glide = "4.15.1" # Glide
+circleimageview = "3.1.0" # CircleImageView
 
 [libraries]
+# Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+# AndroidX
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
-firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
-firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
-firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+
+# Firebase
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+
+# UI
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+circleimageview = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleimageview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
-

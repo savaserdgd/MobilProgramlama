@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backg"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".addPoemActivity">
+
+    <!-- Başlık -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Yeni Şiir Ekle"
+        android:textAlignment="center"
+        android:textColor="#5D4037"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Geri Düğmesi -->
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_back_white"
+        android:tint="#5D4037" />
+
+    <!-- Şiir Başlığı -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Şiir Başlığı">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titleEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Şair Adı -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Şair Adı (Opsiyonel)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/AuthorEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Şiir İçeriği -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:hint="Şiir İçeriği">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ContentEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Kaydet Butonu -->
+    <Button
+        android:id="@+id/SavePoemBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_button01"
+        app:backgroundTint="@null"
+        android:text="Şiiri Kaydet"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</LinearLayout>
